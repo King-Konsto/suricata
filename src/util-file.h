@@ -89,6 +89,9 @@ typedef struct File_ {
                                      *   flag is set */
     uint64_t content_stored;
     uint64_t size;
+
+    uint32_t sid[10]; //max 10 sids per file
+    uint32_t nof_sid;
 } File;
 
 typedef struct FileContainer_ {

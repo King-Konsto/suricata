@@ -263,6 +263,12 @@ static int DetectFilestoreMatch (ThreadVars *t, DetectEngineThreadCtx *det_ctx, 
      * matches. */
     if (file != NULL) {
         file_id = file->file_store_id;
+        if(file->nof_sid < 10) {
+           file->sid[file->nof_sid] = s->id; //test
+           file->nof_sid++;
+        } else {
+           printf("\nMAX NUMBER REACHED\n");
+        }
     }
 
     det_ctx->filestore[det_ctx->filestore_cnt].file_id = file_id;
